@@ -11,25 +11,25 @@ if (!window.location.origin) {
 }
 
 $(document).ready(function() {
-	
-	// Change all href links that go out of the origin to open in a new window
-	$("a").not("[href*='" + window.location.origin + "']").attr("target", "new");
+
+	// Change all href links that go out of the origin to open in a new window (commented out for now)
+	//$("a").not("[href*='" + window.location.origin + "']").attr("target", "new");
 	
 	// Highlight all on load if highlighting
 	if (typeof hljs !== "undefined") {
 		hljs.initHighlightingOnLoad();
 	}
-	
+
 	// If d3 is not loaded do not show the globe
 	if (typeof d3 === "undefined") {
 		return;
 	}
-	
+
 	// Peace out if in a mobile browser
 	if ($.browser.mobile) {
-		return;	
+		return;
 	}
-	
+
 	// If you are hosting your site on say GitHub pages at the URL
 	// "person.github.com/repo-name", loading the world.json file will
 	// fail unless the script knows the base url it's calling from
